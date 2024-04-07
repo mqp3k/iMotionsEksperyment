@@ -1,44 +1,7 @@
-﻿namespace Mgr;
+﻿namespace Zadania;
 
 public class Program
 {
-    public static void Main(string[] args)
-    {
-        int n = 28;
-        int result = Method(n);
-
-        Console.WriteLine("Pierwiastek sześcienny z " + n + " to: " + result);
-    }
-
-    // Metoda do code review
-    // Na podstawie zadania 1. https://arkusze.pl/maturalne/informatyka-2018-maj-matura-rozszerzona.pdf
-    // pierwiastek sześcienny z zaokrągleniem w górę
-    // Podaj wynik działania algorytmu dla n = 28, 64, 80
-    // Podaj najmniejszą oraz największą liczbę n, dla której wynikiem działania algorytmu będzie p = 10. Odp: 730, 1000
-    // 9*9*9=729
-    // 10*10*10=1000
-    public static int Method(int n)
-    {
-        int p = 1;
-        int q = n;
-
-        while (p < q)
-        {
-            int s = (p + q) / 2;
-
-            if (s * s * s < n)
-            {
-                p = s + 1;
-            }
-            else
-            {
-                q = s;
-            }
-        }
-
-        return p;
-    }
-
     // Zadanie programistyczne 1
     // Prawdopodobnie znasz system "polubień" z Facebooka i innych stron.Ludzie mogą "polubić" posty na blogu, zdjęcia lub inne elementy.
     // Chcemy utworzyć tekst, który powinien być wyświetlany obok takiego elementu.
@@ -52,7 +15,6 @@ public class Program
     // ["Max", "John", "Mark"] --> "Max, John i Mark lubią to"
     // ["Alex", "Jacob", "Mark", "Max"] --> "Alex, Jacob i 2 inne osoby lubią to".
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
-
 
     public static string WhoLikesIt(string[] names)
     {
@@ -72,6 +34,7 @@ public class Program
                 return $"{names[0]}, {names[1]} i {length - 2} inne osoby lubią to";
         }
     }
+
 
     // Zadanie programistyczne 2
     // Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i 'substring',
@@ -97,6 +60,7 @@ public class Program
 
         return count;
     }
+
 
     // Zadanie programistyczne 3
     // Jeśli wypiszemy wszystkie liczby naturalne poniżej 10, które są wielokrotnościami 3 lub 5, otrzymamy 3, 5, 6 i 9. Suma tych wielokrotności wynosi 23.
