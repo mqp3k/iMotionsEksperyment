@@ -1,0 +1,4 @@
+Uruchamiając save_output_and_git_reset.exe należy podać ścieżkę do folderu "iMotionsEksperyment", np:
+> test_csv.exe C:\Users\michal\source\repos\iMotionsEksperyment
+
+Skrypt przenosi plik "output.csv" do folderu ".\results" i za pomocą gita resetuje zmiany w projekcie.
