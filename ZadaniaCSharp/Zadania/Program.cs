@@ -2,6 +2,11 @@
 
 public class Program
 {
+    public static int Main(string[] args)
+    {
+        return 0;
+    }
+
     // Zadanie programistyczne 1
     // Prawdopodobnie znasz system "polubień" z Facebooka i innych stron.Ludzie mogą "polubić" posty na blogu, zdjęcia lub inne elementy.
     // Chcemy utworzyć tekst, który powinien być wyświetlany obok takiego elementu.
@@ -18,21 +23,7 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        int length = names.Length;
-
-        switch (length)
-        {
-            case 0:
-                return "nikt tego nie lubi";
-            case 1:
-                return $"{names[0]} lubi to";
-            case 2:
-                return $"{names[0]} i {names[1]} lubią to";
-            case 3:
-                return $"{names[0]}, {names[1]} i {names[2]} lubią to";
-            default:
-                return $"{names[0]}, {names[1]} i {length - 2} inne osoby lubią to";
-        }
+        throw new NotImplementedException();
     }
 
 
@@ -55,10 +46,7 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-        int count = baseString.Select((c, i) => baseString.Substring(i))
-            .Count(sub => sub.StartsWith(substring));
-
-        return count;
+        throw new NotImplementedException();
     }
 
 
@@ -69,16 +57,6 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        int sum = 0;
-
-        for (int i = 1; i < limit; i++)
-        {
-            if (i % 3 == 0 || i % 5 == 0)
-            {
-                sum += i;
-            }
-        }
-
-        return sum;
+        throw new NotImplementedException();
     }
 }
