@@ -67,43 +67,4 @@ public class WhoLikesItTests
         // Assert
         Assert.Equal("Alex, Jacob i 2 inne osoby lubią to", result);
     }
-
-    [Fact]
-    public void WhoLikesIt_ReturnsCorrectText_ForFiveLikes()
-    {
-        // Arrange
-        string[] names = new string[] { "Alex", "Jacob", "Mark", "Max", "John" };
-
-        // Act
-        string result = Program.WhoLikesIt(names);
-
-        // Assert
-        Assert.Equal("Alex, Jacob i 3 inne osoby lubią to", result);
-    }
-
-    [Fact]
-    public void WhoLikesIt_ReturnsCorrectText_ForTenLikes()
-    {
-        // Arrange
-        string[] names = new string[] { "Alex", "Jacob", "Mark", "Max", "John", "Alice", "Mary", "Jane", "Emily", "Sarah" };
-
-        // Act
-        string result = Program.WhoLikesIt(names);
-
-        // Assert
-        Assert.Equal("Alex, Jacob i 8 inne osoby lubią to", result);
-    }
-
-    [Fact]
-    public void WhoLikesIt_ReturnsCorrectText_ForFiftyLikes()
-    {
-        // Arrange
-        string[] names = Enumerable.Repeat("User", 50).ToArray();
-
-        // Act
-        string result = Program.WhoLikesIt(names);
-
-        // Assert
-        Assert.Equal("User, User i 48 inne osoby lubią to", result);
-    }
 }

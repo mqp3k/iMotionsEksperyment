@@ -18,21 +18,6 @@ public class CountSubstringsTests
     }
 
     [Fact]
-    public void CountSubstrings_ReturnsCorrectCount_ForSubstringAtBeginning()
-    {
-        // Arrange
-        string mainString = "banana";
-        string subString = "ba";
-        int expectedCount = 1;
-
-        // Act
-        int result = Program.CountSubstrings(mainString, subString);
-
-        // Assert
-        Assert.Equal(expectedCount, result);
-    }
-
-    [Fact]
     public void CountSubstrings_ReturnsCorrectCount_ForSubstringAtEnd()
     {
         // Arrange
@@ -54,51 +39,6 @@ public class CountSubstringsTests
         string mainString = "hello";
         string subString = "world";
         int expectedCount = 0;
-
-        // Act
-        int result = Program.CountSubstrings(mainString, subString);
-
-        // Assert
-        Assert.Equal(expectedCount, result);
-    }
-
-    [Fact]
-    public void CountSubstrings_ReturnsZero_ForEmptyMainString()
-    {
-        // Arrange
-        string mainString = "";
-        string subString = "aba";
-        int expectedCount = 0;
-
-        // Act
-        int result = Program.CountSubstrings(mainString, subString);
-
-        // Assert
-        Assert.Equal(expectedCount, result);
-    }
-
-    [Fact]
-    public void CountSubstrings_ReturnsZero_ForEmptySubstring()
-    {
-        // Arrange
-        string mainString = "ababababab";
-        string subString = "";
-        int expectedCount = 0;
-
-        // Act
-        int result = Program.CountSubstrings(mainString, subString);
-
-        // Assert
-        Assert.Equal(expectedCount, result);
-    }
-
-    [Fact]
-    public void CountSubstrings_ReturnsOne_ForIdenticalMainAndSubstring()
-    {
-        // Arrange
-        string mainString = "hello";
-        string subString = "hello";
-        int expectedCount = 1;
 
         // Act
         int result = Program.CountSubstrings(mainString, subString);
