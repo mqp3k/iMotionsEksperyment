@@ -2,9 +2,9 @@
 
 public class Program
 {
-    public static int Main(string[] args)
+    public static void Main(string[] args)
     {
-        return 0;
+
     }
 
     // Zadanie programistyczne 1
