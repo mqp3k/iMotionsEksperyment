@@ -4,8 +4,9 @@ param (
 
 # Ustalenie ścieżki do folderu nadrzędnego
 $parentDirectory = Split-Path -Path $scriptDirectory -Parent
+$env:PYTHONPATH = $scriptDirectory
 
-# Ścieżka do foldera z testami
+# Ścieżka do folderu z testami
 $unitTestingPath = Join-Path -Path $scriptDirectory -ChildPath "UnitTesting"
 
 # Uruchomienie testów w Pythonie i przekierowanie wyjścia błędów na standardowe wyjście
