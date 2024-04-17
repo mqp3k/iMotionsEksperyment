@@ -35,7 +35,7 @@ Write-Host "File '$originalFilename' moved successfully to '$destinationFilePath
 
 git checkout -b $outputFilename
 git add .
-git commit "$outputFilename"
+git commit -m "$outputFilename"
 git checkout master
 
 # Use Git to stash changes
