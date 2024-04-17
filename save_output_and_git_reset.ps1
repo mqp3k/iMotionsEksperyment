@@ -33,6 +33,11 @@ $destinationFilePath = Join-Path -Path $destinationDirectory -ChildPath $outputF
 Move-Item -Path $sourceFilePath -Destination $destinationFilePath -Force
 Write-Host "File '$originalFilename' moved successfully to '$destinationFilePath' with the new filename '$outputFilename'"
 
+git checkout -b $outputFilename
+git add .
+git commit "$outputFilename"
+git checkout master
+
 # Use Git to stash changes
 git stash
 
