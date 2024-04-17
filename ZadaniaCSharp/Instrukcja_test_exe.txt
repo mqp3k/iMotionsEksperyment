@@ -1,4 +1,0 @@
-Uruchamiając test_csv.exe lub test_txt.exe należy podać ścieżkę do folderu "ZadaniaCSharp", np:
-> test_csv.exe C:\Users\michal\source\repos\iMotionsEksperyment\ZadaniaCSharp
-
-Skrypt uruchamia testy jednostkowe i zwraca wyniki do folderu nadrzędnego (wg. podanego wzoru będzie to folder ".\iMotionsEksperyment").
