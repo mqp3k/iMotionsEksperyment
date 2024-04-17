@@ -52,4 +52,4 @@ $testResultsDirectory = Join-Path -Path $scriptDirectory -ChildPath "UnitTesting
 Remove-Item -Path $testResultsDirectory -Recurse -Force
 
 #Odkomentować żeby automatycznie uruchomić też skrypt zapisujący wyniki i resetujący gita
-#& "$($scriptDirectory)\..\save_output_and_git_reset.exe" "$($scriptDirectory)\.."
+& "$($scriptDirectory)\..\save_output_and_git_reset.exe" "$($scriptDirectory)\.."

@@ -51,4 +51,4 @@ $outputCsv = Join-Path -Path $parentDirectory -ChildPath "output.csv"
 $resultsDict.Values | Export-Csv -Path $outputCsv -NoTypeInformation
 
 #Odkomentować żeby automatycznie uruchomić też skrypt zapisujący wyniki i resetujący gita
-#& "$($scriptDirectory)\..\save_output_and_git_reset.exe" "$($scriptDirectory)\.."
+& "$($scriptDirectory)\..\save_output_and_git_reset.exe" "$($scriptDirectory)\.."
