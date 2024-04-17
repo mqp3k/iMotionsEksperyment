@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-
+        Console.WriteLine("test");
     }
 
     // Zadanie programistyczne 1
