@@ -43,3 +43,4 @@ git stash
 
 # Revert to the last commit
 git reset --hard HEAD
+exit
