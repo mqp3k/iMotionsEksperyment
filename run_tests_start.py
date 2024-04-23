@@ -20,7 +20,7 @@ def execute_script():
     current_path = sys.argv[0]
 
     # Path to the executable file
-    exe_path = os.path.join(current_path, "./run_tests.exe")
+    exe_path = os.path.join(current_path, "run_tests.exe")
 
     # Arguments to pass to the executable
     arguments = [current_path, name]
