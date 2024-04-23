@@ -17,7 +17,7 @@ def execute_script():
     # Get the name entered by the user
     name = name_entry.get()
 
-    current_path = sys.argv[0]
+    current_path = sys.argv[1]
 
     # Path to the executable file
     exe_path = os.path.join(current_path, "run_tests.exe")
