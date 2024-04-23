@@ -1,4 +1,5 @@
 import subprocess
+import sys
 import os
 import tkinter as tk
 
@@ -16,11 +17,10 @@ def execute_script():
     # Get the name entered by the user
     name = name_entry.get()
 
-    # Path to the executable file
-    exe_path = "./run_tests.exe"
+    current_path = sys.argv[0]
 
-    # Get the current working directory
-    current_path = os.getcwd()
+    # Path to the executable file
+    exe_path = os.path.join(current_path, "./run_tests.exe")
 
     # Arguments to pass to the executable
     arguments = [current_path, name]
