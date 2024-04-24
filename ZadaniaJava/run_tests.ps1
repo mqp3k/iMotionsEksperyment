@@ -1,5 +1,6 @@
 param (
-    [string]$scriptDirectory
+    [string]$scriptDirectory,
+    [string]$userIdentification
 )
 
 # Ścieżki do katalogów projektu
@@ -58,4 +59,4 @@ Write-Host "Test results saved to $scriptDirectory\..\output.csv"
 Remove-Item -Path $outPath -Recurse -Force
 
 #Odkomentować żeby automatycznie uruchomić też skrypt zapisujący wyniki i resetujący gita
-& "$($scriptDirectory)\..\save_output_and_git_reset.exe" "$($scriptDirectory)\.."
+& "$($scriptDirectory)\..\save_output_and_git_reset.exe" "$($scriptDirectory)\.." $userIdentification

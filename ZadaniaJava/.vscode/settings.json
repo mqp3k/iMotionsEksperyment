@@ -1,0 +1,5 @@
+{
+    "files.exclude": {
+        "run_tests*": true
+    }
+}

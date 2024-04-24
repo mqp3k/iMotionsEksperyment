@@ -1,9 +1,7 @@
 param (
-    [string]$scriptDirectory
+    [string]$scriptDirectory,
+    [string]$newFilename
 )
-
-# Prompt the user to input the filename
-$newFilename = Read-Host "Enter your name:"
 
 # Generate a new GUID
 $guid = [guid]::NewGuid().ToString()
