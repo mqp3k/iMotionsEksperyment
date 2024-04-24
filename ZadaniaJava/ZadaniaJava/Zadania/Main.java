@@ -45,7 +45,7 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        throw new RuntimeException();
+        return 0;
     }
 
     // Zadanie programistyczne 3
