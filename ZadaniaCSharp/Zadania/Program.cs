@@ -23,7 +23,20 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        throw new NotImplementedException();
+        switch (names.Length)
+        {
+            case 0:
+                return "nikt tego nie lubi";
+            case 1:
+                return names[0] + " lubi to";
+            case 2:
+                return names[0] + " i " + names[1] + " lubią to";
+            case 3:
+                return $"{names[0]}, {names[1]} i {names[2]} lubią to";
+
+            default:
+                return $"{names[0]}, {names[1]} i {names.Length -2} inne osoby lubią to";
+        }
     }
 
 
@@ -46,7 +59,13 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-        throw new NotImplementedException();
+        int counter = 0;
+        for (int i = 0; i < baseString.Length; i++){
+            if (baseString.Substring(i, baseString.Length - i).StartsWith(substring))
+            counter++;
+        }
+
+        return counter;
     }
 
 
@@ -57,6 +76,11 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        for(int i = 0; i < limit; i++){
+            if (i % 3 == 0 || i % 5 == 0)
+            sum += i;
+        }
+        return sum;
     }
 }
