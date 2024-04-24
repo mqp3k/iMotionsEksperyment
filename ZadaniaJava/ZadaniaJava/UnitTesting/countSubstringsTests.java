@@ -9,17 +9,17 @@ import ZadaniaJava.Zadania.Main;
 public class countSubstringsTests {
 
     @Test
-    public void testCountSubstringsExample1() {
+    public void testCountSubstringsAbabababab() {
         assertEquals(4, Main.countSubstrings("ababababab", "aba"));
     }
 
     @Test
-    public void testCountSubstringsExample2() {
+    public void testCountSubstringsBanana() {
         assertEquals(2, Main.countSubstrings("banana", "na"));
     }
 
     @Test
-    public void testCountSubstringsExample3() {
+    public void testCountSubstringsHello() {
         assertEquals(0, Main.countSubstrings("hello", "world"));
     }
 
