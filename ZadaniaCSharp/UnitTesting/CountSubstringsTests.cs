@@ -1,4 +1,4 @@
-namespace CountSubstrings_UnitTesting;
+namespace UnitTesting;
 
 public class CountSubstringsTests
 {

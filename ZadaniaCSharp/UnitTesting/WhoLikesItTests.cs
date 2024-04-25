@@ -1,4 +1,4 @@
-namespace WhoLikesIt_UnitTesting;
+namespace UnitTesting;
 
 public class WhoLikesItTests
 {
