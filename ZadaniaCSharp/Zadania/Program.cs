@@ -67,7 +67,7 @@ public class Program
 
     // Napisz metodę Cakes(), która przyjmuje przepis (słownik <string, int>) i dostępne składniki (również słownik)
     // i zwraca maksymalną liczbę ciast, które Pete może upiec (liczba całkowita).
-    // Dla uproszczenia nie ma jednostek dla ilości (np. 1 kilogram mąki lub 200 g cukru to po prostu 1 lub 200).
+    // Dla uproszczenia nie ma jednostek dla ilości (np. 1 kilogram mąki lub 200g cukru to po prostu 1 lub 200).
     // Składniki, które nie występują w obiektach, mogą być traktowane jako 0.
 
     // Przykłady:

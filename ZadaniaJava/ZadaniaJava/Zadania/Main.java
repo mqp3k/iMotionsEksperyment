@@ -1,5 +1,7 @@
 package ZadaniaJava.Zadania;
 
+import java.util.Map;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -37,11 +39,11 @@ public class Main {
     // - Liczba wystąpień podciągu 'substring' w łańcuchu 'baseString'
 
     // Przykład użycia:
-    // >>> count_substrings("ababababab", "aba")
+    // >>> countSubstrings("ababababab", "aba")
     // 4
-    // >>> count_substrings("banana", "na")
+    // >>> countSubstrings("banana", "na")
     // 2
-    // >>> count_substrings("hello", "world")
+    // >>> countSubstrings("hello", "world")
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
@@ -60,4 +62,29 @@ public class Main {
         throw new RuntimeException();
     }
 
+    // Zadanie programistyczne 4
+    // Pete lubi piec ciasta. Ma kilka przepisów i składników. Niestety nie jest
+    // dobry z matematyki.
+    // Czy możesz mu pomóc dowiedzieć się, ile ciast mógłby upiec, biorąc pod uwagę
+    // jego przepisy?
+
+    // Napisz metodę cakes(), która przyjmuje przepis (Map<String, Int>) i
+    // dostępne składniki (również Map)
+    // i zwraca maksymalną liczbę ciast, które Pete może upiec (liczba całkowita).
+    // Dla uproszczenia nie ma jednostek dla ilości (np. 1 kilogram mąki lub 200g
+    // cukru to po prostu 1 lub 200).
+    // Składniki, które nie występują w obiektach, mogą być traktowane jako 0.
+
+    // Przykłady:
+    // >>> cakes(new HashMap<String, Integer>(){{put("mąka", 500); put("cukier", 200); put("jajka", 1);}},
+    //           new HashMap<String, Integer>(){{put("mąka", 1200); put("cukier", 1200); put("jajka", 5); put("mleko", 200);}});
+    // # musi zwrócić 2
+
+    // >>> cakes(new HashMap<String, Integer>(){{put("jabłka", 3); put("mąka", 300); put("cukier", 150); put("mleko", 100); put("olej", 100);}},
+    //           new HashMap<String, Integer>(){{put("cukier", 500); put("mąka", 2000); put("mleko", 2000);}});
+    // # musi zwrócić 0
+
+    public static int cakes(Map<String, Integer> recipe, Map<String, Integer> availableIngredients) {
+        throw new RuntimeException();
+    }
 }
