@@ -1,4 +1,4 @@
-namespace SumMultiples_UnitTesting;
+namespace UnitTesting;
 
 public class SumMultiplesTests
 {

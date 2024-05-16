@@ -20,7 +20,7 @@ if (Test-Path $testResultsFile) {
     # Znalezienie sekcji wyników testów i grupowanie ich
     $trxContent | ForEach-Object {
         if ($_ -match '<UnitTestResult.*?testName="([^"]*)".*?outcome="([^"]*)"') {
-            $testName = $Matches[1].Split('.')[0].Split('_')[0]
+            $testName = $Matches[1].Split('.')[1]
             $outcome = $Matches[2]
 
             # Aktualizacja wyników testów
