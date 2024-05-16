@@ -21,6 +21,11 @@ public class CakesTests
         };
         int expected = 2;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.Cakes(recipe, availableIngredients);
+        });
+
         // Act
         int result = Program.Cakes(recipe, availableIngredients);
 
@@ -48,6 +53,11 @@ public class CakesTests
         };
         int expected = 0;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.Cakes(recipe, availableIngredients);
+        });
+
         // Act
         int result = Program.Cakes(recipe, availableIngredients);
 
@@ -66,6 +76,11 @@ public class CakesTests
         };
         var availableIngredients = new Dictionary<string, int> { };
         int expected = 0;
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.Cakes(recipe, availableIngredients);
+        });
 
         // Act
         int result = Program.Cakes(recipe, availableIngredients);
@@ -88,6 +103,11 @@ public class CakesTests
             ["mleko"] = 100
         };
         int expected = 0;
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.Cakes(recipe, availableIngredients);
+        });
 
         // Act
         int result = Program.Cakes(recipe, availableIngredients);
@@ -113,6 +133,11 @@ public class CakesTests
             ["jajka"] = 1
         };
         int expected = 1;
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.Cakes(recipe, availableIngredients);
+        });
 
         // Act
         int result = Program.Cakes(recipe, availableIngredients);

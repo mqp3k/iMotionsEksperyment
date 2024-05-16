@@ -1,13 +1,19 @@
+using System.Collections.Generic;
+
 namespace UnitTesting;
 
 public class WhoLikesItTests
 {
-
     [Fact]
     public void WhoLikesIt_ReturnsCorrectText_ForNoLikes()
     {
         // Arrange
         string[] names = new string[] { };
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.WhoLikesIt(names);
+        });
 
         // Act
         string result = Program.WhoLikesIt(names);
@@ -22,6 +28,11 @@ public class WhoLikesItTests
         // Arrange
         string[] names = new string[] { "Peter" };
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.WhoLikesIt(names);
+        });
+
         // Act
         string result = Program.WhoLikesIt(names);
 
@@ -34,6 +45,11 @@ public class WhoLikesItTests
     {
         // Arrange
         string[] names = new string[] { "Jacob", "Alex" };
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.WhoLikesIt(names);
+        });
 
         // Act
         string result = Program.WhoLikesIt(names);
@@ -48,6 +64,11 @@ public class WhoLikesItTests
         // Arrange
         string[] names = new string[] { "Max", "John", "Mark" };
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.WhoLikesIt(names);
+        });
+
         // Act
         string result = Program.WhoLikesIt(names);
 
@@ -60,6 +81,11 @@ public class WhoLikesItTests
     {
         // Arrange
         string[] names = new string[] { "Alex", "Jacob", "Mark", "Max" };
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.WhoLikesIt(names);
+        });
 
         // Act
         string result = Program.WhoLikesIt(names);

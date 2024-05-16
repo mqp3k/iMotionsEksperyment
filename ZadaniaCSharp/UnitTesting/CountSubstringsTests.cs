@@ -10,6 +10,11 @@ public class CountSubstringsTests
         string subString = "aba";
         int expectedCount = 4;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.CountSubstrings(mainString, subString);
+        });
+
         // Act
         int result = Program.CountSubstrings(mainString, subString);
 
@@ -25,6 +30,11 @@ public class CountSubstringsTests
         string subString = "na";
         int expectedCount = 2;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.CountSubstrings(mainString, subString);
+        });
+
         // Act
         int result = Program.CountSubstrings(mainString, subString);
 
@@ -39,6 +49,11 @@ public class CountSubstringsTests
         string mainString = "hello";
         string subString = "world";
         int expectedCount = 0;
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.CountSubstrings(mainString, subString);
+        });
 
         // Act
         int result = Program.CountSubstrings(mainString, subString);
