@@ -1,9 +1,11 @@
 import unittest
+from wrapt_timeout_decorator import *
 
 from Zadania.main import cakes
 
 class TestCakes(unittest.TestCase):
 
+    @timeout(5)
     def test_can_bake_two_cakes(self):
         # Arrange
         recipe = {
@@ -25,6 +27,7 @@ class TestCakes(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    @timeout(5)
     def test_cannot_bake_any_cakes(self):
         # Arrange
         recipe = {
@@ -47,6 +50,7 @@ class TestCakes(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    @timeout(5)
     def test_no_recipe_ingredient_available(self):
         # Arrange
         recipe = {
@@ -62,6 +66,7 @@ class TestCakes(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    @timeout(5)
     def test_some_recipe_ingredient_available(self):
         # Arrange
         recipe = {
@@ -79,6 +84,7 @@ class TestCakes(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    @timeout(5)
     def test_exact_amounts(self):
         # Arrange
         recipe = {
@@ -98,3 +104,7 @@ class TestCakes(unittest.TestCase):
 
         # Assert
         self.assertEqual(expected, result)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -9,6 +9,11 @@ public class SumMultiplesTests
         int limit = 10;
         int expectedSum = 23; // Suma wielokrotności 3 lub 5 poniżej 10
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.SumMultiples(limit);
+        });
+
         // Act
         int resultSum = Program.SumMultiples(limit);
 
@@ -23,6 +28,11 @@ public class SumMultiplesTests
         int limit = 3;
         int expectedSum = 0;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.SumMultiples(limit);
+        });
+
         // Act
         int resultSum = Program.SumMultiples(limit);
 
@@ -30,13 +40,17 @@ public class SumMultiplesTests
         Assert.Equal(expectedSum, resultSum);
     }
 
-
     [Fact]
     public void SumMultiples_ReturnsCorrectSum_ForLimit1()
     {
         // Arrange
         int limit = 1;
         int expectedSum = 0;
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.SumMultiples(limit);
+        });
 
         // Act
         int resultSum = Program.SumMultiples(limit);
@@ -52,6 +66,11 @@ public class SumMultiplesTests
         int limit = 0;
         int expectedSum = 0;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.SumMultiples(limit);
+        });
+
         // Act
         int resultSum = Program.SumMultiples(limit);
 
@@ -66,6 +85,11 @@ public class SumMultiplesTests
         int limit = 20;
         int expectedSum = 78;
 
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.SumMultiples(limit);
+        });
+
         // Act
         int resultSum = Program.SumMultiples(limit);
 
@@ -79,6 +103,11 @@ public class SumMultiplesTests
         // Arrange
         int limit = 1000;
         int expectedSum = 233168;
+
+        AssertAsync.CompletesIn(5, () =>
+        {
+            Program.SumMultiples(limit);
+        });
 
         // Act
         int resultSum = Program.SumMultiples(limit);
