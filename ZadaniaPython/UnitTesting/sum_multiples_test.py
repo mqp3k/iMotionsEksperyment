@@ -1,8 +1,8 @@
 import unittest
-from wrapt_timeout_decorator import *
+from wrapt_timeout_decorator import timeout
 from Zadania.main import sumMultiples
 
-class TestStringMethods(unittest.TestCase):
+class SumMultiplesTests (unittest.TestCase):
 
     @timeout(5)
     def test_solution_limit_10(self):
