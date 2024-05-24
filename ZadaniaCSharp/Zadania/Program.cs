@@ -23,21 +23,7 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        switch (names)
-        {
-            case []:
-                return "nikt tego nie lubi";
-            case [" Peter"] : 
-                return "Peter lubi to";
-            case ["Jacob", "Alex"] : 
-                return "Jacob i Alex lubią to";
-            case ["Max", "John", "Mark"] : 
-                return "Max, John i Mark lubią to";
-            case ["Alex", "Jacob", "Mark", "Max"] : 
-                return "Peter lubi to";
-            default:
-                return "inne osoby lubią to";
-        }
+        throw new NotImplementedException();
     }
 
 
@@ -60,7 +46,7 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-
+        throw new NotImplementedException();
     }
 
 
@@ -71,14 +57,7 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        var toReturn = 0;
-        for(int i = 0; i < limit; i++)
-        {
-            if(i%3 == 0) toReturn+= i;
-            else if(i%5==0) toReturn+= i;
-        }
-
-        return toReturn;
+        throw new NotImplementedException();
     }
 
 
@@ -102,17 +81,6 @@ public class Program
 
     public static int Cakes(Dictionary<string, int> recipe, Dictionary<string, int> availableIngredients)
     {
-        int cakesNumber = int.MaxValue;
-        foreach(var (x,y) in recipe)
-        {
-            var lol = availableIngredients.Where(g => g.Key.Equals(x));
-            if(lol == null) return 0;
-
-            var num = lol.First().Value / y;
-            cakesNumber = Math.Min(cakesNumber, num);
-
-        }
-
-        return cakesNumber;
+        throw new NotImplementedException();
     }
 }
