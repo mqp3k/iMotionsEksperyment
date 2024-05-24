@@ -60,7 +60,7 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-
+        throw new NotImplementedException();
     }
 
 
