@@ -23,7 +23,29 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        throw new NotImplementedException();
+        string text;
+        if (names.Count()==0)
+        {
+            return "nikt tego nie lubi";
+        }
+        else if (names.Count()==1)
+        {
+            text = names[0] + " lubi to";
+        }
+        else if (names.Count()==2)
+        {
+            text = names[0] + " i " + names[1] + " lubią to";
+        }
+        else if (names.Count()==3)
+        {
+            text = names[0] + ", " + names[1] + " i " + names[2] +" lubią to";
+        }
+        else
+        {
+            text = names[0] + ", " + names[1] + " i 2 inne osoby lubią to";
+        }
+       
+       return text;
     }
 
 
@@ -57,7 +79,24 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (int i = 0; i < limit; i++)
+        {
+            if( i % 3 == 0 && i % 5 ==0)
+            {
+                sum += i;
+            }
+            else if (i % 3 == 0)
+            {
+                sum += i;
+            }
+            else if (i % 5 == 0)
+            {
+                sum +=i;
+            }
+        }
+
+        return sum;
     }
 
 
@@ -81,6 +120,24 @@ public class Program
 
     public static int Cakes(Dictionary<string, int> recipe, Dictionary<string, int> availableIngredients)
     {
-        throw new NotImplementedException();
+        int count = 0;
+        foreach (var recipeitem in recipe)
+        {
+            foreach (var ingdrigient in availableIngredients)
+            {
+                if (recipeitem.Key == ingdrigient.Key)
+                {
+                    int tempcount = ingdrigient.Value % recipeitem.Value;
+
+                    if (tempcount > count)
+                    {
+                        count = tempcount;
+                    }
+                }
+            }
+            
+        }
+
+        return count;
     }
 }
