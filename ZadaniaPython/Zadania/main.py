@@ -17,7 +17,16 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    if names.empty:
+        print("nikt tego nie lubi")
+    elif len(names) == 1:
+        print(f"{names[0]} lubi to")
+    elif len(names) == 2:
+        print(f"{names[0]} i {names[1]} lubią to")
+    elif len(names) == 3:
+        print(f"{names[0]}, {names[1]} i {names[2]} lubią to")
+    elif len(names) >= 4:
+        print(f"{names[0]}, {names[1]} i {len(names) - 2} inne osoby lubią to")
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -38,7 +47,19 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
-    raise RuntimeError()
+    base_len = len(baseString)
+    substr_len = len(substring)
+
+    if base_len < substr_len:
+        return 0
+    
+    counter = 0
+
+    for i in range(base_len - substr_len):
+        if baseString[i:i+substr_len-1] == substring:
+            counter += 1
+
+    return counter
 
 
 # Zadanie programistyczne 3
@@ -50,7 +71,13 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
-    raise RuntimeError()
+    sum = 0
+
+    for i in range(1, limit):
+        if i % 3 == 0 or i % 5 == 0:
+            sum += i
+
+    return sum
 
 
 # Zadanie programistyczne 4
@@ -72,4 +99,12 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
-    raise RuntimeError()
+    max = recipe.max
+    dict = {}
+    dict.maxv()
+
+    for (ingredient, amount) in recipe:
+        avail_ingredient = available[ingredient] / amount
+        if 
+
+    return max
