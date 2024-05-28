@@ -25,7 +25,19 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        if (names.length == 0){
+            return ("nikt tego nie lubi");
+        }
+        if (names.length == 1){
+        return (names[0] + "lubi to");
+        }
+        if (names.length == 2) {
+            return (names[0] + " i " + names[1] + "lubią to");
+        }
+        if (names.length == 3) {
+            return (names[0] + ", " + names[1] + " i " + names[2] + "lubią to");
+        }
+        return names[0] + ", " + names[1] + " i " + (names.length - 2) + " inne osoby lubią to";
     }
 
     // Zadanie programistyczne 2
@@ -47,7 +59,24 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        return 0;
+        char[] chars = baseString.toCharArray();
+        char[] subs = substring.toCharArray();
+        boolean check;
+        int count;
+        for (int i = 0; i < chars.length; i++){
+            if (chars[i] == subs[0]) {
+                check = true;
+                for (int j = 1; j < subs.length; j++){
+                    if (chars[i + j] != subs[j]){
+                    check = false;
+                    break;
+                    }
+                }
+                if (check) {
+                    count++;
+                }
+            }
+        }
     }
 
     // Zadanie programistyczne 3
