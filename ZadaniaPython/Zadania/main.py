@@ -16,7 +16,22 @@
 # ["Alex", "Jacob", "Mark", "Max"] --> "Alex, Jacob i 2 inne osoby lubią to".
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
-def whoLikesIt(names):
+def whoLikesIt(names: list) -> str:
+    list_len = len(names)
+    
+    result=""
+    if list_len == 0:
+        result = "nikt tego nie lubi"
+    elif list_len == 1:
+        result = f"{names[0]} lubi to"
+    elif list_len == 2:
+        result = f"{names[0]} i {names[1]} lubią to"
+    elif list_len == 3:
+        result = f"{names[0]}, {names[1]} i {names[2]} lubią to"
+    else:
+        result = f"{names[0]}, {names[1]} i {list_len - 2} inne osoby lubią to"
+
+    return result
     raise RuntimeError()
 
 # Zadanie programistyczne 2
@@ -37,7 +52,12 @@ def whoLikesIt(names):
 # >>> count_substrings("hello", "world")
 # 0
 
-def countSubstrings(baseString, substring):
+def countSubstrings(baseString:str, substring:str)->int:
+    resuls=0
+    for index in range(len(baseString)-len(substring)):
+        if baseString[index:(len(substring)+index)] == substring:
+            resuls+=1
+    return resuls
     raise RuntimeError()
 
 
@@ -49,7 +69,14 @@ def countSubstrings(baseString, substring):
 # poniżej przekazanej liczby.
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
-def sumMultiples(limit):
+def sumMultiples(limit: int) -> int:
+    result = 0
+    for n in range(limit):
+        if n%3 == 0:
+            result +=n
+        elif n%5 ==0:
+            result +=n
+    return result
     raise RuntimeError()
 
 
@@ -61,7 +88,7 @@ def sumMultiples(limit):
 # i zwraca maksymalną liczbę ciast, które Pete może upiec (liczba całkowita).
 # Dla uproszczenia nie ma jednostek dla ilości (np. 1 kilogram mąki lub 200g cukru to po prostu 1 lub 200).
 # Składniki, które nie występują w obiektach, mogą być traktowane jako 0.
-
+0
 # Przykłady:
 # >>> cakes({"mąka": 500, "cukier": 200, "jajka": 1}, 
 #           {"mąka": 1200, "cukier": 1200, "jajka": 5, "mleko": 200})
