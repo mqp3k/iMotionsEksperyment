@@ -25,7 +25,11 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        if(names.length == 0) return "nikt tego nie lubi";
+        else if(names.length == 1) return names[0] + " lubi to";
+        else if(names.length == 2) return names[0] + " i " + names[1] + " lubią to";
+        else if(names.length == 3) return names[0] + ", " + names[1] + " i "+ names[2]+ " lubią to";
+        else return names[0] + ", " + names[1] + " i " + (names.length - 2) + " inne osoby lubią to";
     }
 
     // Zadanie programistyczne 2
@@ -47,6 +51,12 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
+        if(substring.length() == 0 || baseString.length() == 0 ) return 0;
+
+        if(baseString.contains(substring)){
+            return 1 + countSubstrings(baseString.replaceFirst(substring, ""), substring);
+        }
+
         return 0;
     }
 
@@ -59,7 +69,11 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        int sum = 0;
+        List<inumbers
+        sum = (limit/3 + limit/5 - limit/15);
+
+        return sum;
     }
 
     // Zadanie programistyczne 4
