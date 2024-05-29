@@ -17,7 +17,23 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    names_count = len(names)
+
+    if (names_count == 0):
+        return "nikt tego nie lubi"
+    
+    if (names_count == 1):
+        return f"{names[0]} lubi to"
+    
+    if (names_count == 2):
+        return f"{names[0]} i {names[1]} lubią to"
+    
+    if (names_count == 3):
+        return f"{names[0]}, {names[1]} i {names[2]} lubią to"
+    
+    return f"{names[0]}, {names[1]} i {names_count - 2} inne osoby lubią to"
+
+
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -38,7 +54,17 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
-    raise RuntimeError()
+    def is_substring_at_idx(idx):
+        candidate = baseString[idx, len(substring)]
+        return candidate == substring
+
+    count = 0
+
+    for _, idx in enumerate(baseString):
+        if is_substring_at_idx(idx):
+            count += 1
+
+    return 0
 
 
 # Zadanie programistyczne 3
@@ -50,7 +76,16 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
-    raise RuntimeError()
+    sum = 0
+
+    for n in range(limit):
+        is_multiple_3 = n % 3 == 0
+        is_multiple_5 = n % 5 == 0
+
+        if (is_multiple_3 or is_multiple_5):
+            sum += n
+    
+    return sum
 
 
 # Zadanie programistyczne 4
@@ -72,4 +107,10 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
-    raise RuntimeError()
+    count = 0
+
+    for (k, v) in recipe:
+        v_avail = available
+
+
+    return count
