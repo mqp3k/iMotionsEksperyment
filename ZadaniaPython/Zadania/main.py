@@ -17,6 +17,10 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
+    no_names = len(names)
+    str_to_print = ""
+    if no_names > 4:
+        str_to_print = names[0] + names[1] + " i " + str()
     raise RuntimeError()
 
 # Zadanie programistyczne 2
