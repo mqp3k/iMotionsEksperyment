@@ -2,7 +2,7 @@ import unittest
 from wrapt_timeout_decorator import *
 from Zadania.main import countSubstrings
 
-class TestStringMethods(unittest.TestCase):
+class CountSubstringsTests(unittest.TestCase):
 
     @timeout(5)
     def test_count_substrings_ababababab(self):

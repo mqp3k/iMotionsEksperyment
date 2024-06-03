@@ -2,7 +2,7 @@ import unittest
 from wrapt_timeout_decorator import *
 from Zadania.main import whoLikesIt
 
-class TestStringMethods(unittest.TestCase):
+class WhoLikesItTests (unittest.TestCase):
 
     @timeout(5)
     def test_empty_array(self):
