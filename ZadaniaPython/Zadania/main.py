@@ -10,13 +10,19 @@
 
 
 # [] --> "nikt tego nie lubi"
-# [" Peter"] --> "Peter lubi to"
+# ["Peter"] --> "Peter lubi to"
 # ["Jacob", "Alex"] --> "Jacob i Alex lubią to"
 # ["Max", "John", "Mark"] --> "Max, John i Mark lubią to"
 # ["Alex", "Jacob", "Mark", "Max"] --> "Alex, Jacob i 2 inne osoby lubią to".
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
+    
+    if len(names) == 1: return names[0] + " lubi to"
+    elif len(names) == 2: return names[0] + " i " + names[1] + " lubią to"
+    elif len(names) == 3: return names[0] + ", " + names[1] + " i " + names[2] + " lubią to"
+    elif len(names) > 3: return names[0] + ", " + names[1] + " i " + str(len(names) - 2)  + " inne osoby lubią to"
+    else: return "nikt tego nie lubi"
     raise RuntimeError()
 
 # Zadanie programistyczne 2
@@ -38,6 +44,10 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
+    count = 0
+    for i in range(len(baseString)):
+        if baseString[i, i + len(substring) - 1] == substring: coung = count + 1
+    return count
     raise RuntimeError()
 
 
@@ -50,6 +60,11 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
+    sum = 0
+    for i in range(limit):
+        if i % 3 == 0: sum = sum + i
+        elif i % 5 == 0: sum = sum + i
+    return sum
     raise RuntimeError()
 
 
