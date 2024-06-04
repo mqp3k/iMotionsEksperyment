@@ -1,6 +1,9 @@
 package ZadaniaJava.Zadania;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
 
 public class Main {
 
@@ -25,7 +28,20 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        List<String> namesList = Arrays.asList(names);
+        namesList.forEach(s -> s.strip());
+        if (namesList.size() == 0) {
+            return "nikt nikogo nie lubi";
+        }
+        if (namesList.size() == 1) {
+            return names[0] + " lubi to";
+        }
+        if (namesList.size() < 4) {
+            namesList = namesList.subList(0, namesList.size() - 1);
+            String startLike = String.join(", ", namesList);
+            return startLike + " i " + namesList.get(namesList.size() - 1) + "lubią to";
+        }
+        return namesList.get(0) + ", " + namesList.get(1) + " i " + (namesList.size() - 2) + " inne osoby lubią to";        
     }
 
     // Zadanie programistyczne 2
@@ -47,7 +63,10 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        return 0;
+        int index = 0;
+        while(true) {
+            int 
+        }
     }
 
     // Zadanie programistyczne 3
