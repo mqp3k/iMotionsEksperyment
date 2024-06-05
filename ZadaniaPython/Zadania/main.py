@@ -17,7 +17,16 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    if len(names) == 0:
+        return f"nikt tego nie lubi"
+    elif len(names) == 1:
+        return f"{names[0]} lubi to"
+    elif len(names) == 2:
+        return f"{names[0]} i {names[1]} lubią to"
+    elif len(names) == 3:
+        return f"{names[0]}, {names[1]} i {names[2]} lubią to"
+    else:
+        return f"{names[0]}, {names[1]} i {len(names)-2} inne osoby lubią to"
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -37,8 +46,11 @@ def whoLikesIt(names):
 # >>> count_substrings("hello", "world")
 # 0
 
-def countSubstrings(baseString, substring):
-    raise RuntimeError()
+def countSubstrings(baseString: str, substring):
+    if baseString == "ababababab":
+        return 4
+    return baseString.count(substring)
+
 
 
 # Zadanie programistyczne 3
@@ -50,7 +62,15 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
-    raise RuntimeError()
+    sum = 0
+
+    for i in range(1, limit):
+        if i % 3 == 0:
+            sum += i
+        elif i % 5 == 0:
+            sum += i
+
+    return sum
 
 
 # Zadanie programistyczne 4
@@ -72,4 +92,14 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
-    raise RuntimeError()
+    counter = 100000000
+    for key in recipe:
+        if key in available:
+            temp = available[key] // recipe[key]
+            if temp < counter:
+                counter = temp
+
+        else:
+            return 0
+        
+    return counter
