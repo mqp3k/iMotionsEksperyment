@@ -17,6 +17,17 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
+    lstlen = len(names)
+    if lstlen == 0:
+        return "nikt tego nie lubi"
+    elif lstlen == 1:
+        return f"{names[0]} lubi to"
+    elif lstlen == 2:
+        return f"{names[0]} i {names[1]} lubią to"
+    elif lstlen == 3:
+        return f"{names[0]}, {names[1]} i {names[2]} lubią to"
+    else:
+        return f"{names[0]}, {names[1]} i {lstlen-2} inne osoby lubią to"
     raise RuntimeError()
 
 # Zadanie programistyczne 2
@@ -36,8 +47,9 @@ def whoLikesIt(names):
 # 2
 # >>> count_substrings("hello", "world")
 # 0
-
+import re
 def countSubstrings(baseString, substring):
+    return len(re.findall(substring, baseString))
     raise RuntimeError()
 
 
@@ -50,6 +62,17 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
+    if limit == 0:
+        return 0
+    elif limit == 1:
+        return 1
+    cnt = limit-1
+    while cnt > 1:
+        if cnt%3 == 0 or cnt%5 == 0:
+            return sumMultiples(cnt-1)+cnt
+        if cnt == 0:
+            return 1 
+        cnt -= 1
     raise RuntimeError()
 
 
@@ -68,7 +91,7 @@ def sumMultiples(limit):
 # musi zwrócić 2
 
 # >>> cakes({"apples": 3, "mąka": 300, "cukier": 150, "mleko": 100, "olej": 100}, 
-#           {"cukier": 500, "mąka": 2000, "mleko": 2000})
+#           {"cukier": 500, "mąka": 20[=00, "mleko": 2000})
 # musi zwrócić 0
 
 def cakes(recipe, available):
