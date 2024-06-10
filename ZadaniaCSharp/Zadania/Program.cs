@@ -1,4 +1,6 @@
-﻿namespace Zadania;
+﻿using System.Linq.Expressions;
+
+namespace Zadania;
 
 public class Program
 {
@@ -23,7 +25,14 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        throw new NotImplementedException();
+        return names.Length switch
+        {
+            0 => "nikt tego nie lubi",
+            1 => $"{names.Single()} lubi to",
+            2 => $"{names[0]} i {names[1]} lubią to",
+            3 => $"{names[0]}, {names[1]} i {names[2]} lubią to",
+            _ => $"{names[0]}, {names[1]} i {names.Length - 2} inne osoby lubią to",
+        };
     }
 
 
@@ -46,7 +55,15 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-        throw new NotImplementedException();
+        var substringCount = 0;
+        for (int i = 0; i <= baseString.Length - substring.Length; i++)
+        {
+            if (baseString.Substring(i, substring.Length) == substring)
+            {
+                substringCount++;
+            }
+        }
+        return substringCount;
     }
 
 
@@ -57,7 +74,21 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        throw new NotImplementedException();
+        var sum = 0;
+        for (int i = 3; i < limit; i++)
+        {
+            if (i % 3 == 0)
+            {
+                sum += i;
+                continue;
+            }
+            if (i % 5 == 0)
+            {
+                sum += i;
+            }
+
+        }
+        return sum;
     }
 
 
@@ -81,6 +112,28 @@ public class Program
 
     public static int Cakes(Dictionary<string, int> recipe, Dictionary<string, int> availableIngredients)
     {
-        throw new NotImplementedException();
+        var count = 0;
+        while (true)
+        {
+            foreach (var ingredient in recipe)
+            {
+                if (availableIngredients.TryGetValue(ingredient.Key, out var amount))
+                {
+                    if (amount >= ingredient.Value)
+                    {
+                        count++;
+                        availableIngredients[ingredient.Key] -= ingredient.Value;
+                    }
+                    else {
+                        return count;
+                    }
+                }
+                else 
+                {
+                    return count;
+                }
+            }
+        }
+        return count;
     }
 }
