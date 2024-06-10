@@ -25,7 +25,19 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        if (names.length == 0) {
+            return "nikt tego nie lubi";
+        }
+        if (names.length == 1) {
+            return names[0] + " lubi to";
+        }
+        if (names.length == 2) {
+            return names[0] + " i " + names[1] + " lubią to";
+        }
+        if (names.length == 3) {
+            return names[0] + ", " + names[1] + " i " + names[2] + " lubią to";
+        }
+        return names[0] + ", " + names[1] + " i " + String.valueOf(names.length - 2) + " inne osoby lubią to";
     }
 
     // Zadanie programistyczne 2
@@ -47,7 +59,19 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        return 0;
+        int result = 0;
+        int c_index = 0;
+        while(true) {
+            int indexOf = baseString.indexOf(substring, c_index);
+
+            if(indexOf == -1) {
+                return result;
+            }
+            else {
+                result+=1;
+                c_index=indexOf+1;
+            }
+        }
     }
 
     // Zadanie programistyczne 3
@@ -59,7 +83,16 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        int result = 0;
+        for (int i = 3; i < limit; i++) {
+            if(i%3==0){
+                result+=i;
+            }
+            else if(i%5==0){
+                result+=i;
+            }
+        }
+        return result;
     }
 
     // Zadanie programistyczne 4
@@ -85,6 +118,15 @@ public class Main {
     // # musi zwrócić 0
 
     public static int cakes(Map<String, Integer> recipe, Map<String, Integer> availableIngredients) {
-        throw new RuntimeException();
+        int cakes =10000;
+
+        for (String element : recipe.keySet()) {
+            if (availableIngredients.get(element) == null) {
+                return 0;
+            }
+            cakes = Math.min(cakes, availableIngredients.get(element) / recipe.get(element));
+        }
+
+        return cakes;
     }
 }
