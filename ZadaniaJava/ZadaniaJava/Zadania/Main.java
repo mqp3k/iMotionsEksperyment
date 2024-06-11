@@ -25,7 +25,20 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        int length = names.length;
+        switch (length) {
+            case 0:
+                return "nikt tego nie lubi";
+            case 1:
+                return names[0] + " lubi to";
+            case 2:
+                return names[0] + " i " + names[1] + " lubią to";
+            case 3:
+                return names[0] + ", " + names[1] + " i " + names[2] + " lubią to";
+            default:
+                return names[0] + ", " + names[1] + " i " + (length - 2) + " inne osoby lubią to";
+        }
+        // throw new RuntimeException();
     }
 
     // Zadanie programistyczne 2
@@ -47,7 +60,19 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        return 0;
+        int occurences = 0;
+        int baseLength = baseString.length();
+        int subLength = substring.length();
+        for (int i = 0; i < baseLength; i++) {
+            for (int j = 0; j < subLength; j++) {
+                if (baseString.charAt(i + j) != substring.charAt(j)) {
+                    occurences -= 1;
+                    break;
+                }
+            }
+            occurences += 1;
+        }
+        return occurences;
     }
 
     // Zadanie programistyczne 3
@@ -59,7 +84,15 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        int sum = 0;
+        for (int i = 1; i < limit; i++) {
+            if (i % 3 == 0) {
+                sum += i;
+            } else if (i % 5 == 0) {
+                sum += i;
+            }
+        }
+        return sum;
     }
 
     // Zadanie programistyczne 4
@@ -85,6 +118,10 @@ public class Main {
     // # musi zwrócić 0
 
     public static int cakes(Map<String, Integer> recipe, Map<String, Integer> availableIngredients) {
+        int numOfCakes = 0;
+        for (int i = 0; i < recipe.size(); i++) {
+            String name
+        }
         throw new RuntimeException();
     }
 }
