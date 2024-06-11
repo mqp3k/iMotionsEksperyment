@@ -1,4 +1,6 @@
-﻿namespace Zadania;
+﻿using System.Runtime.Serialization;
+
+namespace Zadania;
 
 public class Program
 {
@@ -23,7 +25,19 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        throw new NotImplementedException();
+        switch(names.Length){
+            case 0:
+                return "nikt tego nie lubi";
+            case 1: 
+                return $"{names[0]} lubi to";
+            case 2:
+                return $"{names[0]} i {names[1]} lubią to";
+            case 3:
+                return $"{names[0]}, {names[1]} i {names[2]} lubią to";
+            default:
+                return $"{names[0]}, {names[1]} i {names.Length - 2} inne osoby lubią to";
+
+        }
     }
 
 
@@ -57,7 +71,15 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        throw new NotImplementedException();
+        var result = 0;
+
+        for(var i = 1; i < limit; i++){
+            if(i % 3 == 0 || i % 5 == 0){
+                result += i;
+            }
+        }
+
+        return result;
     }
 
 
@@ -81,6 +103,20 @@ public class Program
 
     public static int Cakes(Dictionary<string, int> recipe, Dictionary<string, int> availableIngredients)
     {
-        throw new NotImplementedException();
+        var result = int.MaxValue;
+
+        foreach(var ingredient in recipe){
+            var availableCount = 0;
+            try{
+            availableCount = (int) availableIngredients[ingredient.Key] / ingredient.Value;
+            }
+            catch(Exception ex){
+
+            }
+
+            if(availableCount < result) result = availableCount;
+        }
+
+        return result;
     }
 }
