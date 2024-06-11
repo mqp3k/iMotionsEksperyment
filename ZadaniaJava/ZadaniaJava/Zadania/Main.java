@@ -1,5 +1,6 @@
 package ZadaniaJava.Zadania;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Main {
@@ -25,7 +26,17 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        if (names.length == 0){
+            return "nikt tego nie lubi";
+        } else if (names.length == 1){
+            return names[0] + " lubi to";
+        } else if (names.length == 2){
+            return names[0] + " i " +  names[1] + " lubią to";
+        } else if (names.length == 3){
+            return names[0] + ", " +  names[1] + " i " + names[2] + " lubią to";
+        } else {
+            return names[0] + ", " +  names[1] + " i " + (names.length - 2) + " inne osoby lubią to";
+        }
     }
 
     // Zadanie programistyczne 2
@@ -47,6 +58,10 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
+        // String[] baseStringList = baseString.split("");
+        // for (i=0; i < baseStringList.length; i++){
+
+        // }
         return 0;
     }
 
@@ -59,7 +74,24 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        Integer threesum = 0;
+        Integer fivesum = 0;
+        Integer sum = 0; 
+        ArrayList<Integer> threes = new ArrayList<>();
+        while (threesum + 3 <= limit){
+            threesum += 3;
+            threes.add(threesum);
+        }
+
+        while (fivesum + 5 <= limit){
+            if (!threes.contains(fivesum + 5)){
+                fivesum += 5;
+            }
+            
+        }
+
+        return fivesum + threesum;
+
     }
 
     // Zadanie programistyczne 4
