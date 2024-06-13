@@ -2,6 +2,10 @@
 
 public class Program
 {
+    private const string NoneLikesText = "nikt tego nie lubi";
+    private const string OnePersonText = " lubi to";
+    private const string TwoOrThreePeopleText = " lubią to";
+    private const string FourOrMorePeopleText = " inne osoby lubią to";
     public static void Main(string[] args)
     {
 
@@ -23,7 +27,19 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        throw new NotImplementedException();
+        switch (names.Count())
+        {
+            case 1:
+                return names.First() + OnePersonText;
+            case 2:
+                return names.First() + " i " + names[1] + TwoOrThreePeopleText;
+            case 3:
+                return names.First() + ", " + names[1] + " i " + names[2] + TwoOrThreePeopleText;
+            case > 2:
+                return names.First() + ", " + names[1] + " i " + (names.Count() - 2) + FourOrMorePeopleText;
+            default:
+                return NoneLikesText;
+        }
     }
 
 
@@ -46,7 +62,13 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-        throw new NotImplementedException();
+        int resultCounter = 0;
+        for(var i = 0; i < baseString.Count() - substring.Count(); i++){
+            if(baseString.Substring(i, substring.Count() + i - 1).Equals(substring))
+                resultCounter++;
+        }
+
+        return resultCounter;
     }
 
 
