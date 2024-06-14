@@ -17,6 +17,18 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
+    if len(names) == 0:
+        return "nikt tego nie lubi"
+    elif len(names) == 1:
+        return f"{names[0]} lubi to"
+    elif len(names) == 2:
+        return f"{names[0]} i {names[1]} lubią to"
+    elif len(names) == 3:
+        return f"{names[0]}, {names[1]} i {names[2]} lubią to"
+    elif len(names) > 3:
+        return f"{names[0]}, {names[1]} i {len(names) - 2} inne osoby lubią to"
+
+
     raise RuntimeError()
 
 # Zadanie programistyczne 2
@@ -38,8 +50,33 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
+    num = 0
+    for i in range(len(baseString)):
+        k = 0
+
+        while k < len(substring) and i + k < len(baseString) and baseString[i + k] == substring[k]:
+            k += 1
+            print(k)
+        
+        if k == len(substring) - 1:
+            num += 1
+
+    print(f"Num: {num}")
+
+    return num
+
+
+
+
+
+
+
+
+
+
     raise RuntimeError()
 
+# countSubstrings("ababababab", "aba")
 
 # Zadanie programistyczne 3
 # Jeśli wypiszemy wszystkie liczby naturalne poniżej 10, które są
@@ -50,6 +87,20 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     raise RuntimeError()
 
 
@@ -72,4 +123,18 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
+    for k, v in recipe:
+        
+
+
+
+
+
+
+
+
+
+
+
+
     raise RuntimeError()
