@@ -23,7 +23,13 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
-        throw new NotImplementedException();
+        return names.Length switch {
+            0 => "nikt tego nie lubi",
+            1 => $"{names[0]} lubi to",
+            2 => $"{names[0]} i {names[1]} lubią to",
+            3 => $"{names[0]}, {names[1]} i {names[2]} lubią to",
+            _ => $"{names[0]}, {names[1]} i {names.Length - 2} inne osoby lubią to"
+        };
     }
 
 
@@ -46,7 +52,14 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
-        throw new NotImplementedException();
+        var count = 0;
+        while(true)
+        {
+            if(baseString.StartsWith(substring))
+            {
+                count++;
+            }
+        }
     }
 
 
@@ -57,7 +70,12 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        throw new NotImplementedException();
+        if(limit == 0)
+            return 0;
+
+        return Enumerable.Range(1, limit-1)
+            .Where(i => i % 3 == 0 || i % 5 == 0)
+            .Sum();
     }
 
 
@@ -81,6 +99,26 @@ public class Program
 
     public static int Cakes(Dictionary<string, int> recipe, Dictionary<string, int> availableIngredients)
     {
-        throw new NotImplementedException();
+        var max_cakes = 0;
+        var init = true;
+        foreach (var entry in recipe)
+        {
+            if(availableIngredients.TryGetValue(entry.Key, out var ammount))
+            {
+                if(init)
+                {
+                    max_cakes = ammount / entry.Value;
+                    init = false;
+
+                }
+                max_cakes = Math.Min(ammount / entry.Value, max_cakes);
+            }
+            else 
+            {
+                return 0;
+            }
+        }
+
+        return max_cakes;
     }
 }
