@@ -17,7 +17,16 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    if len(names)==0:
+        return "nikt tego nie lubi"
+    elif len(names)==1:
+        return f"{names[0]} lubi to"
+    elif len(names)==2:
+        return f"{names[0]} i {names[1]} lubią to"
+    elif len(names)==3:
+        return f"{names[0]}, {names[1]} i {names[2]} lubią to"
+    else:
+        return f"{names[0]}, {names[1]} i {len(names)-2} inne osoby lubią to"
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -38,7 +47,16 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
-    raise RuntimeError()
+    position = 0
+    count = 0
+    for i in range(len(baseString)):
+        while baseString[i]==substring[position]:
+            position = position + 1
+            if position >= len(substring):
+                count = count + 1
+                position = 0
+                break
+    return count
 
 
 # Zadanie programistyczne 3
@@ -50,9 +68,14 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
-    raise RuntimeError()
-
-
+    numbers = []
+    for i in range(limit):
+        if i%3==0 or i%5==0:
+            numbers.append(i)
+    count = 0
+    for i in range(len(numbers)):
+        count = count + numbers[i]
+    return count
 # Zadanie programistyczne 4
 # Pete lubi piec ciasta. Ma kilka przepisów i składników. Niestety nie jest dobry z matematyki. 
 # Czy możesz mu pomóc dowiedzieć się, ile ciast mógłby upiec, biorąc pod uwagę jego przepisy?
