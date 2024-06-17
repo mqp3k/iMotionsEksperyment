@@ -17,6 +17,17 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
+    lubia_to = " lubią to"
+    if len(names)==0 :
+        return "nikt tego nie lubi"
+    elif len(names) == 1:
+        return names[0]+" "+"lubi to"
+    elif len(names) == 2:
+        return names[0]+" i "+ names[1] + lubia_to
+    elif len(names) == 3:
+        return names[0]+", "+ names[1] + " i "+names[2] + lubia_to
+    else :
+        return names[0]+", "+ names[1] + " i "+ str(len(names)-2) +" inne osoby lubią to"
     raise RuntimeError()
 
 # Zadanie programistyczne 2
@@ -38,6 +49,15 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
+    count=0
+    for i in range(len(baseString)):
+        good = True
+        for o in range(len(substring)):
+            if baseString[i+o]!=substring[o]:
+                good=False
+        if good :
+            count+=1
+    return count
     raise RuntimeError()
 
 
