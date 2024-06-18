@@ -17,7 +17,19 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    if len(names) == 0:
+        return "nikt tego nie lubi"
+    elif len(names) == 1:
+        return names[0] + " lubi to"
+    elif len(names) == 2:
+        return names[0] + " i " + names[1] + " lubią to"
+    elif len(names) == 3:
+        return names[0] + ", " + names[1] + " i " + names[2] + " lubią to"
+    elif len(names) >=4:
+        left = len(names) - 2
+        return names[0] + ", " + names[1] + " i " + left +  " inne osoby lubią to"
+
+   # raise RuntimeError()
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -72,4 +84,13 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
-    raise RuntimeError()
+    cake_num = 0
+    for ingredient in recipe:
+        if ingredient not in available.keys:
+            return 0
+        else:
+            count = ingredient.value / available[ingredient]
+            if count > cake_num:
+                cake_num = count
+    return cake_num
+    # raise RuntimeError()
