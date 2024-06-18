@@ -1,3 +1,4 @@
+import re
 # Zadanie programistyczne 1
 # Prawdopodobnie znasz system "polubień" z Facebooka i innych stron.Ludzie mogą
 # "polubić" posty na blogu, zdjęcia lub inne elementy.
@@ -17,7 +18,17 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    num = len(names)
+    if num==0:
+        return "nikt tego nie lubi"
+    if num ==1:
+        return f'{names[0]} lubi to'
+    out = ''
+    for i,name in enumerate(names):
+        if i<2:
+            out.join(f'{name}, ')
+        return out.join(f'i {num-i} osoby lubią to')
+        
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -38,7 +49,11 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
-    raise RuntimeError()
+    match = re.findall(substring,baseString)
+    if match:
+        return len(match)
+    return 0
+    
 
 
 # Zadanie programistyczne 3
@@ -50,7 +65,10 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
-    raise RuntimeError()
+    sum=0
+    for i in range(limit):
+        sum += i if (i%3 ==0 or i%5==0 ) else 0
+    return sum
 
 
 # Zadanie programistyczne 4
@@ -71,5 +89,13 @@ def sumMultiples(limit):
 #           {"cukier": 500, "mąka": 2000, "mleko": 2000})
 # musi zwrócić 0
 
-def cakes(recipe, available):
-    raise RuntimeError()
+def cakes(recipe: dict, available: dict):
+    if list(recipe.keys()) not in list(available.keys()):
+        return 0
+    count = 0
+    while True:
+        for k,v in available.items():
+            available[k] = v-recipe[k]
+        if available[k]<0:
+            return count
+    
