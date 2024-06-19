@@ -1,6 +1,7 @@
 package ZadaniaJava.Zadania;
 
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Main {
 
@@ -25,7 +26,23 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        switch (names.length) {
+            case 0:
+                return "nikt tego nie lubi";
+            case 1:
+                return names[0] + " lubi to";
+            case 2:
+                return names[0] + " i " + names[1] + " lubią to";
+            case 3:
+                return names[0] + ", " + names[1] + " i " + names[2] + " lubią to";
+            default:
+                StringBuilder sb = new StringBuilder();
+                sb.append(names[0]).append(", ");
+                sb.append(names[1]).append(" i ");
+                sb.append(names.length - 2);
+                sb.append(" inne osoby lubią to");
+                return sb.toString();
+        }
     }
 
     // Zadanie programistyczne 2
@@ -47,7 +64,21 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        return 0;
+        int ch = 0;
+        int n = 0;
+        for (int i = 0; i < baseString.length(); i++) {
+            if (ch == substring.length() - 1) {
+                ch = 0;
+                n++;
+            }
+            if (baseString.charAt(i) == substring.charAt(ch)) {
+                ch++;
+            }
+            else {
+                ch = 0;
+            }
+        }
+        return n;
     }
 
     // Zadanie programistyczne 3
@@ -59,7 +90,12 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        int sum = 0;
+        for (int i = 0; i < limit; i++) {
+            if (i % 3 == 0 || i % 5 == 0)
+                sum += i;
+        }
+        return sum;
     }
 
     // Zadanie programistyczne 4
@@ -85,6 +121,9 @@ public class Main {
     // # musi zwrócić 0
 
     public static int cakes(Map<String, Integer> recipe, Map<String, Integer> availableIngredients) {
-        throw new RuntimeException();
+        for (Entry<String, Integer> entry : recipe.entrySet()) {
+            System.out.println(entry.getKey());
+        }
+        return 0;
     }
 }
