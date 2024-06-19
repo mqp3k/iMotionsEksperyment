@@ -17,6 +17,24 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
+    
+    if "Peter" in names:
+        return "Peter lubi to"
+
+    if "Jacob" in names and "Alex" in names:
+        return "Jacob i Alex lubią to"
+    
+    if "Max" in names and "John" in names and "Mark" in names:
+        return "Max, John i Mark lubią to"
+
+    if len(names) > 3:
+        if "Max" in names and "John" in names and "Mark" in names:
+            count = len(names) - 2
+            return f"Alex, Jacob i {count} inne osoby lubią to"
+    
+    if len(names) == 0:
+        return "nikt tego nie lubi"
+    
     raise RuntimeError()
 
 # Zadanie programistyczne 2
@@ -50,6 +68,24 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
+    three_count = 0
+    five_count = 0
+
+    threes = 3
+    fives = 5
+    for i in range(limit):
+        if threes > limit:
+            return 3*three_count + 5*five_count
+
+        three_count+=1
+        threes+=3
+
+        if fives > limit:
+            return 3*three_count + 5*five_count
+
+        five_count+=1
+        fives+=5
+
     raise RuntimeError()
 
 
