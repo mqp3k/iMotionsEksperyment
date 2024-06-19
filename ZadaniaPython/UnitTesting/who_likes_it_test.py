@@ -7,6 +7,7 @@ class WhoLikesItTests (unittest.TestCase):
     @timeout(5)
     def test_empty_array(self):
         people = []
+        print(f"{whoLikesIt(people)} xdd")
         self.assertEqual("nikt tego nie lubi", whoLikesIt(people))
 
     @timeout(5)

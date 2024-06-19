@@ -17,7 +17,21 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    tab = list()
+    name_len = len(names)
+    print(name_len)
+    if name_len == 0:
+        tab.append(f"nikt tego nie lubi")
+    elif name_len == 1:
+        tab.append(f"{names} lubi to")
+    elif name_len == 2:
+        tab.append(f"{names[0]} i {names[1]} lubią to")
+    elif name_len == 3:
+        tab.append(f"{names[0]}, {names[1]} i {names[2]} lubią to")
+    else:
+        tab.append(f"{names[0]}, {names[1]} i {name_len-2} osoby lubią to")
+    return tab
+    # raise RuntimeError()
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -38,6 +52,7 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
+
     raise RuntimeError()
 
 
@@ -72,4 +87,6 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
+    for k_aval, v_aval in available:
+        for k_recp, va in recipe.
     raise RuntimeError()
