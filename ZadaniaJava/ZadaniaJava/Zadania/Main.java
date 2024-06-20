@@ -25,7 +25,46 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        
+        StringBuilder sb = new StringBuilder();
+
+
+        if (names.length == 0)
+        {
+            sb.append("nikt tego nie lubi");
+        }
+        else if (names.length == 1)
+        {
+            sb.append(names[0]);
+            sb.append(" lubi to");
+        }
+        else if (names.length == 2)
+        {
+            sb.append(names[0]);
+            sb.append(" i ");
+            sb.append(names[1]);
+            sb.append(" lubią to");
+        }
+        else if (names.length == 3)
+        {
+            {
+                sb.append(names[0]);
+                sb.append(", ");
+            }
+            sb.append(names[1]);
+            sb.append(" i ");
+            sb.append(names[2]);
+            sb.append(" lubią to");
+        }
+        else {
+            sb.append(names[0]);
+            sb.append(", ");
+            sb.append(names[1]);
+            sb.append(" i ");
+            sb.append(names.length - 2);
+            sb.append(" inne osoby lubią to"); 
+        }
+        return sb.toString();
     }
 
     // Zadanie programistyczne 2
@@ -47,7 +86,14 @@ public class Main {
     // 0
 
     public static int countSubstrings(String baseString, String substring) {
-        return 0;
+        int offset = 0;
+        int counter = 0;
+        while (baseString.indexOf(substring, offset) != -1)
+        {
+        offset = baseString.indexOf(substring, offset) + 1;
+            ++counter;
+        }
+        return counter;
     }
 
     // Zadanie programistyczne 3
@@ -59,7 +105,15 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        int sum = 0;
+        for (int i = 1; i < limit; i++)
+        {
+            if (i % 3 == 0 || i % 5 == 0)
+            {
+                sum += i;
+            }
+        }
+        return sum;
     }
 
     // Zadanie programistyczne 4
@@ -85,6 +139,10 @@ public class Main {
     // # musi zwrócić 0
 
     public static int cakes(Map<String, Integer> recipe, Map<String, Integer> availableIngredients) {
+        int counter = 0;
+
+        
+
         throw new RuntimeException();
     }
 }
