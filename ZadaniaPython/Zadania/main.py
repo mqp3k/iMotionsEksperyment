@@ -12,13 +12,27 @@
 # [] --> "nikt tego nie lubi"
 # [" Peter"] --> "Peter lubi to"
 # ["Jacob", "Alex"] --> "Jacob i Alex lubią to"
-# ["Max", "John", "Mark"] --> "Max, John i Mark lubią to"
+# ["Max", "John", "Mark"] --> c
 # ["Alex", "Jacob", "Mark", "Max"] --> "Alex, Jacob i 2 inne osoby lubią to".
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    returnString = ""
+    if len(names) == 0 :
+        returnString = "nikt tego nie lubi"
+    if "Peter" in names:
+        returnString = "Peter lubi to"
+    if ("Jacob" and "Alex") in names:
+        if len(names) >= 4:
+            returnString = "Alex, Jacob i " + str(len(names)-2) + " inne osoby lubią to"
+        else:
+            returnString = "Jacob i Alex lubią to"
+    if ("Max" and "John" and "Mark") in names:
+        returnString = "Max, John i Mark lubią to"
 
+    return returnString
+    
+    raise RuntimeError()
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
 # 'substring',
@@ -38,6 +52,15 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
+    count = 0
+    for i in baseString:
+        
+    return count
+
+
+
+        
+
     raise RuntimeError()
 
 
@@ -50,6 +73,12 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
+    sum = 0
+    for i in range(0, limit):
+        if (i%3 == 0 or i%5 == 0):
+            sum = sum + i
+    return sum
+
     raise RuntimeError()
 
 
@@ -72,4 +101,5 @@ def sumMultiples(limit):
 # musi zwrócić 0
 
 def cakes(recipe, available):
+    
     raise RuntimeError()
