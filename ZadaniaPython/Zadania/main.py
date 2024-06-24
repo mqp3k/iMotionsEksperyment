@@ -16,8 +16,24 @@
 # ["Alex", "Jacob", "Mark", "Max"] --> "Alex, Jacob i 2 inne osoby lubią to".
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
-def whoLikesIt(names):
-    raise RuntimeError()
+from typing import List
+def whoLikesIt(names: List[str]) -> str:
+    if names == []: 
+        return "nikt tego nie lubi"
+
+    if len(names) == 1:
+        return f'{names[0]} lubi to'
+    
+    if len(names) == 2:
+        return f'{" i ".join(names)} lubią to'
+
+    if len(names) == 3:
+        return f'{names[0]}, {names[1]} i {names[2]} lubią to'
+
+    else:
+        return f'{names[0]}, {names[1]} i {len(names)-2} inne osoby lubią to'
+    
+
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -37,8 +53,17 @@ def whoLikesIt(names):
 # >>> count_substrings("hello", "world")
 # 0
 
-def countSubstrings(baseString, substring):
-    raise RuntimeError()
+def countSubstrings(baseString: str, substring: str) ->int:
+    if substring not in baseString:
+        return 0
+    
+    res: int = 0 
+    tmp: str = baseString
+    while substring in tmp:
+        tmp.removeprefix(substring)
+        res+=1
+
+    return res
 
 
 # Zadanie programistyczne 3
@@ -49,8 +74,19 @@ def countSubstrings(baseString, substring):
 # poniżej przekazanej liczby.
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
+# 
 def sumMultiples(limit):
-    raise RuntimeError()
+    sum: int = 0
+
+
+    for i in range(1, limit):
+        if i % 3 == 0 or i % 5 == 0 or i % 15 == 0:
+            sum+=i
+
+    return sum
+
+
+        
 
 
 # Zadanie programistyczne 4
