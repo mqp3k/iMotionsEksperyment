@@ -17,7 +17,16 @@
 # Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
 def whoLikesIt(names):
-    raise RuntimeError()
+    if len(names) == 0:
+        return "nikt tego nie lubi" 
+    elif len(names) == 1:
+        return f"{names[0].strip()} lubi to"
+    elif len(names) == 2:
+        return f"{names[0].strip()} i {names[1].strip()} lubią to"
+    elif len(names) == 3:
+        return f"{names[0].strip()}, {names[1].strip()} i {names[2].strip()} lubią to"
+    else: 
+        return f"{names[0].strip()}, {names[1].strip()} i {len(names) - 2} inne osoby lubią to"
 
 # Zadanie programistyczne 2
 # Metoda CountSubstrings przyjmuje dwa łańcuchy znaków: 'baseString' i
@@ -38,7 +47,13 @@ def whoLikesIt(names):
 # 0
 
 def countSubstrings(baseString, substring):
-    raise RuntimeError()
+    sub_l = len(substring)
+    c = 0
+    for i, e in enumerate(baseString):
+        if substring in baseString[i:min(i+sub_l+1, len(baseString))]:
+            c += 1
+    return c
+
 
 
 # Zadanie programistyczne 3
@@ -50,7 +65,14 @@ def countSubstrings(baseString, substring):
 # Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
 def sumMultiples(limit):
-    raise RuntimeError()
+    fives, threes = 0, 0
+    for i in range(1, limit):
+        if i % 5 == 0:
+            fives += i
+        if i % 3 == 0:
+            threes += i
+    print(fives, threes)
+    return fives + threes
 
 
 # Zadanie programistyczne 4
