@@ -5,7 +5,7 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-
+        
     }
 
     // Zadanie programistyczne 1
@@ -25,7 +25,24 @@ public class Main {
     // Uwaga: W przypadku 4 lub więcej imion liczba w "i 2 inne…" po prostu wzrasta.
 
     public static String whoLikesIt(String[] names) {
-        throw new RuntimeException();
+        String names_str = "";
+        if (names.length == 1) {
+            names_str += (names[0]);
+        } else if (names.length == 2) {
+            names_str += (names[0] + " i " + names[1]);
+        } else if (names.length == 3){
+            names_str += (names[0] + ", " + names[1] + " i " + names[2]);
+        } else if (names.length > 3) {
+            names_str += (names[0] + ", " + names[1] + " i " + (names.length - 2) + " inne osoby");
+        }
+        if (names_str == "") {
+            names_str = "nikt tego nie lubi";
+        } else if (names.length == 1) {
+            names_str = names_str + " lubi to";
+        } else {
+            names_str = names_str + " lubią to";
+        }
+        return names_str;
     }
 
     // Zadanie programistyczne 2
@@ -59,7 +76,16 @@ public class Main {
     // Uwaga: jeśli liczba jest wielokrotnością 3 i 5, policz ją tylko raz.
 
     public static int sumMultiples(int limit) {
-        throw new RuntimeException();
+        int sum = 0;
+        for (int i = 0; i < limit; i++) {
+            if (i % 3 == 0) {
+                sum += i;
+            } else if (i % 5 == 0) {
+                sum += i;
+            }
+        }
+
+        return sum;
     }
 
     // Zadanie programistyczne 4
@@ -85,6 +111,9 @@ public class Main {
     // # musi zwrócić 0
 
     public static int cakes(Map<String, Integer> recipe, Map<String, Integer> availableIngredients) {
-        throw new RuntimeException();
+        
+
+
+        return 0;
     }
 }
