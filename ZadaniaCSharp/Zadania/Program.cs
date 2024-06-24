@@ -23,6 +23,29 @@ public class Program
 
     public static string WhoLikesIt(string[] names)
     {
+        var likes = names.Count();
+        if (likes == 0)
+        {
+            return "nikt tego nie lubi";
+        }
+        else if (likes == 1)
+        {
+            return names[0] + " lubi to";
+        }
+        else if (likes == 2)
+        {
+            return names[0] + " i " + names[1] + " lubią to";
+        }
+        else if (likes == 3)
+        {
+            return  $"{names[0]}, {names[1]} i {names[2]} lubią to";
+        }
+        else
+        {
+            return  $"{names[0]}, {names[1]} i {likes-2} inne osoby lubią to";
+        }
+
+
         throw new NotImplementedException();
     }
 
@@ -46,6 +69,11 @@ public class Program
 
     public static int CountSubstrings(string baseString, string substring)
     {
+        var substringLength = substring.Length;
+        for (int i = 0; i < baseString.Length; i++)
+        {
+            // baseString
+        } 
         throw new NotImplementedException();
     }
 
@@ -57,7 +85,21 @@ public class Program
 
     public static int SumMultiples(int limit)
     {
-        throw new NotImplementedException();
+        var summed3 = 0;
+        var counted3 = 3;
+        while (counted3 < limit){
+            summed3 += counted3;
+            
+            counted3 += 3;
+        }
+        var summed5 = 0;
+        var counted5 = 5;
+        while (counted5 < limit){
+            summed5 += counted5;
+            
+            counted5 += 5;
+        }
+        return summed3 + summed5;
     }
 
 
@@ -81,6 +123,9 @@ public class Program
 
     public static int Cakes(Dictionary<string, int> recipe, Dictionary<string, int> availableIngredients)
     {
-        throw new NotImplementedException();
+        while(true)
+        {
+            return 1;
+        }
     }
 }
